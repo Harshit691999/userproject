@@ -1,0 +1,13 @@
+<h3> Register </h3>
+
+<form method="post" action="/registeruser/">
+    {% csrf_token %}
+    {% for fields in form%}
+        {{fields.label}}
+        {{fields}}
+        <hr>
+    {% endfor %}
+    <button type="submit">submit</button>
+</form>
+{{forms.error}}
+<a href={% url 'loginuser' %}>login</a>
